@@ -1,6 +1,7 @@
 :root {
-  --brand: #4f46e5;
-  --brand-dark: #3730a3;
+  --brand: #2c2bd6;
+  --brand-dark: #09266f;
+  --accent: #16c8d8;
   --ink: #172033;
   --muted: #5f6b7a;
   --surface: #ffffff;
@@ -28,7 +29,9 @@ a { color: var(--brand-dark); }
 a:hover { text-decoration-thickness: 2px; }
 
 .site-header {
-  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+  background:
+    radial-gradient(circle at 84% 18%, rgba(22, 200, 216, .34), transparent 28%),
+    linear-gradient(135deg, var(--brand-dark), var(--brand) 62%, #7a1ff2);
   color: #fff;
 }
 
@@ -51,14 +54,12 @@ a:hover { text-decoration-thickness: 2px; }
   font-size: 1.2rem;
 }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(255,255,255,.16);
-  border: 1px solid rgba(255,255,255,.35);
+.brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
 }
 
 nav {
@@ -145,6 +146,10 @@ h3 { margin-top: 1.5rem; font-size: 1.12rem; }
   color: #fff;
   text-decoration: none;
   font-weight: 750;
+}
+
+.button:hover {
+  background: var(--brand-dark);
 }
 
 ul, ol { padding-left: 1.3rem; }
