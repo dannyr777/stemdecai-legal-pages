@@ -29,10 +29,9 @@ a { color: var(--brand-dark); }
 a:hover { text-decoration-thickness: 2px; }
 
 .site-header {
-  background:
-    radial-gradient(circle at 84% 18%, rgba(22, 200, 216, .34), transparent 28%),
-    linear-gradient(135deg, var(--brand-dark), var(--brand) 62%, #7a1ff2);
-  color: #fff;
+  background: #fff;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border);
 }
 
 .header-inner,
@@ -42,13 +41,19 @@ a:hover { text-decoration-thickness: 2px; }
   margin: 0 auto;
 }
 
-.header-inner { padding: 28px 0; }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 0;
+}
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: var(--ink);
   text-decoration: none;
   font-weight: 800;
   font-size: 1.2rem;
@@ -57,20 +62,31 @@ a:hover { text-decoration-thickness: 2px; }
 .brand-logo {
   width: 44px;
   height: 44px;
+  max-width: 44px;
+  max-height: 44px;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+  display: block;
+  flex: 0 0 44px;
+  box-shadow: 0 6px 18px rgba(23, 32, 51, .12);
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  max-width: 44px;
+  max-height: 44px;
 }
 
 nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 18px;
-  margin-top: 18px;
+  margin-top: 0;
 }
 
 nav a {
-  color: #fff;
+  color: var(--brand-dark);
   text-decoration: none;
   font-weight: 650;
 }
@@ -187,5 +203,10 @@ code {
   .header-inner,
   .footer-inner {
     width: min(calc(100% - 24px), var(--max-width));
+  }
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
   }
 }
